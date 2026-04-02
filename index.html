@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Super Mechs - QMONEY Edition</title>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+</head>
+<body style="background:#000; margin:0; display:flex; justify-content:center; align-items:center; height:100vh;">
+
+    <div id="sm-player" style="width:1000px; height:700px;"></div>
+
+    <script>
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        document.getElementById("sm-player").appendChild(player);
+
+        // This connects your "Loader" to your "Client"
+        player.load({
+            url: "bmmLoader.swf",
+            parameters: {
+                "clientPath": "bmmClient.swf",
+                "gateway": "https://supermechs.com/services/amfphp/gateway.php",
+                "hideall": "true"
+            }
+        });
+    </script>
+</body>
+</html>
