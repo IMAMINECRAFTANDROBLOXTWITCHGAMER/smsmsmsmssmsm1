@@ -1,44 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Super Mechs Offline - QMONEY</title>
-    <link rel="stylesheet" href="components.css?v=1.txt">
-    <script src="jquery-3.1.1.min.js"></script>
-    <script src="swfobject.js"></script>
+    <title>Super Mechs - QMONEY</title>
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 </head>
 <body style="background:#000; margin:0; display:flex; justify-content:center; align-items:center; height:100vh;">
 
-    <div id="sm-container" style="width:1000px; height:700px;"></div>
+    <div id="sm-player" style="width:1000px; height:700px;"></div>
 
     <script>
         window.RufflePlayer = window.RufflePlayer || {};
         const ruffle = window.RufflePlayer.newest();
         const player = ruffle.createPlayer();
-        document.getElementById("sm-container").appendChild(player);
+        document.getElementById("sm-player").appendChild(player);
 
         player.load({
             url: "bmmLoader.swf",
+            allowScriptAccess: "always",
             parameters: {
-                // Main Game Files
                 "clientPath": "bmmClient.swf",
                 "gateway": "https://supermechs.com/services/amfphp/gateway.php",
-                
-                // Asset Paths (Tells the game to look in the same folder)
                 "basePath": "./",
-                "contentPath": "./",
                 "libraryPath": "./",
-                "sharedPath": "./",
-
-                // Specific Library Links
-                "itemsLibrary1": "itemsLibrary1.swf",
-                "itemsLibrary2": "itemsLibrary2.swf",
-                "itemsLibrary3": "itemsLibrary3.swf",
-                "generalLibrary": "generalLibrary.swf",
-                "generalLibraryExt": "generalLibraryExt.swf",
-                "soundsLibrary": "soundsLibrary_sound.swf",
-                
-                // Settings from the original index.js
                 "hideall": "true",
                 "is_desktop": "true"
             }
