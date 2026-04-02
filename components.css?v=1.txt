@@ -1,0 +1,21 @@
+
+
+.frame-background {
+    background: url(images/miscFrame.png) no-repeat center;
+    display: inline-block;
+    width: 750px;
+    height: 115px;
+    background-size: contain;
+    padding-top: 18px;
+    padding-right: 2px;
+}
+
+.fullscreen-bottom-frame-background {
+    background: url(images/bottomFrameForFullscreen.png) no-repeat center;
+    display: inline-block;
+    width: 750px;
+    height: 115px;
+    background-size: contain;
+    padding-top: 18px;
+    padding-right: 2px;
+}
